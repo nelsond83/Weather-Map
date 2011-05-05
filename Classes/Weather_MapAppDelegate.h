@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapViewController.h"
+#import "DisplayMap.h"
 
 
 @interface Weather_MapAppDelegate : NSObject <UIApplicationDelegate> {

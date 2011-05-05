@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Debug</string>
+	<string>Project</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -291,7 +291,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>2</integer>
+									<integer>5</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -313,6 +313,8 @@
 							<string>MainColumn</string>
 							<real>233</real>
 						</array>
+						<key>RubberWindowFrame</key>
+						<string>104 200 1136 654 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -328,7 +330,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>34ACDA9C137158F20003448F</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RootViewController.h</string>
+								<string>Weather_MapAppDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -336,19 +338,19 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>34ACDA9D137158F20003448F</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>RootViewController.h</string>
+										<string>Weather_MapAppDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>34ACDDC4137323460003448F</string>
+										<string>34ACDE89137330430003448F</string>
 										<key>history</key>
 										<array>
-											<string>34ACDD91137320AF0003448F</string>
-											<string>34ACDD92137320AF0003448F</string>
-											<string>34ACDD94137320AF0003448F</string>
-											<string>34ACDDB0137321F60003448F</string>
-											<string>34ACDDC1137323450003448F</string>
-											<string>34ACDDC2137323450003448F</string>
+											<string>34ACDE3E13732BF70003448F</string>
+											<string>34ACDE5113732D100003448F</string>
+											<string>34ACDE5213732D100003448F</string>
+											<string>34ACDE5E13732DAB0003448F</string>
+											<string>34ACDE7D13732FA10003448F</string>
+											<string>34ACDE8713732FFF0003448F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -363,6 +365,8 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {881, 397}}</string>
+								<key>RubberWindowFrame</key>
+								<string>104 200 1136 654 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -440,6 +444,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {881, 184}}</string>
+										<key>RubberWindowFrame</key>
+										<string>104 200 1136 654 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -511,8 +517,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -524,8 +528,6 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1136, 299}}</string>
-						<key>RubberWindowFrame</key>
-						<string>111 224 1136 654 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -600,11 +602,7 @@
 							</array>
 							<key>Frame</key>
 							<string>{{554, 0}, {582, 150}}</string>
-							<key>RubberWindowFrame</key>
-							<string>111 224 1136 654 0 0 1440 878 </string>
 						</dict>
-						<key>RubberWindowFrame</key>
-						<string>111 224 1136 654 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -651,7 +649,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>326312774.33595598</real>
+	<real>326316099.672539</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -671,7 +669,7 @@
 		<string>/Users/Taylor/Desktop/Weather-Map/Weather_Map.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>111 224 1136 654 0 0 1440 878 </string>
+	<string>104 200 1136 654 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
