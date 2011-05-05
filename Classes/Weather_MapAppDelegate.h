@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface Weather_MapAppDelegate : NSObject <UIApplicationDelegate> {
     
     UIWindow *window;

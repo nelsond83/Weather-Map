@@ -7,22 +7,56 @@
 //
 
 #import "RootViewController.h"
+#import "DisplayMap.h"
 
 
 @implementation RootViewController
 
-
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	
+	[mapView setMapType:MKMapTypeStandard];
+	[mapView setZoomEnabled:YES];
+	[mapView setScrollEnabled:YES];
+	MKCoordinateRegion region = { {0.0, 0.0 }, { 0.0, 0.0 } };
+	region.center.latitude = 38.8322871 ;
+	region.center.longitude = -77.3080912;
+	region.span.longitudeDelta = 0.10f;
+	region.span.latitudeDelta = 0.10f;
+	[mapView setRegion:region animated:YES];
+	
+	[mapView setDelegate:self];
+	
+	DisplayMap *zip = [[DisplayMap alloc] init];
+	zip.title = @" 22030";
+	zip.subtitle = @"HOT AS HELL";
+	zip.coordinate = region.center;
+	[mapView addAnnotation:zip];
 }
-*/
+
+-(MKAnnotationView *)mapView:(MKMapView *)mV viewForAnnotation:
+(id <MKAnnotation>)annotation {
+	MKPinAnnotationView *pinView = nil;
+	if(annotation != mapView.userLocation)
+	{
+		static NSString *defaultPinID = @"com.invasivecode.pin";
+		pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
+		if ( pinView == nil ) pinView = [[[MKPinAnnotationView alloc]
+										  initWithAnnotation:annotation reuseIdentifier:defaultPinID] autorelease];
+		
+		pinView.pinColor = MKPinAnnotationColorGreen;
+		pinView.canShowCallout = YES;
+		pinView.animatesDrop = YES;
+	}
+	else {
+		[mapView.userLocation setTitle:@"I am here"];
+	}
+	return pinView;
+}
+
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -45,18 +79,18 @@
 }
 */
 
-/*
+
  // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	// Return YES for supported orientations.
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	return YES;
 }
- */
+
 
 
 #pragma mark -
 #pragma mark Table view data source
-
+/*
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -127,7 +161,7 @@
 
 #pragma mark -
 #pragma mark Table view delegate
-
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 	/*
@@ -137,7 +171,7 @@
 	 [self.navigationController pushViewController:detailViewController animated:YES];
 	 [detailViewController release];
 	 */
-}
+//}
 
 
 #pragma mark -
