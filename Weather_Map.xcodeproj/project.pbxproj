@@ -15,6 +15,17 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* MapViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		340ED17E137335720024B9C8 /* ZipCodeEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 340ED17C137335720024B9C8 /* ZipCodeEditorViewController.xib */; };
+		340ED18E137336BA0024B9C8 /* ZipCodeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 340ED18D137336BA0024B9C8 /* ZipCodeWindow.xib */; };
+		340ED3531379BC0E0024B9C8 /* ForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 340ED3521379BC0E0024B9C8 /* ForecastViewController.m */; };
+		340ED3561379BC690024B9C8 /* WeatherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 340ED3551379BC690024B9C8 /* WeatherAppDelegate.m */; };
+		340ED3581379BC880024B9C8 /* ForecastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 340ED3571379BC880024B9C8 /* ForecastViewController.xib */; };
+		340ED35C1379BCC20024B9C8 /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340ED35B1379BCC20024B9C8 /* YAJLiOS.framework */; };
+		340ED4E11379D36A0024B9C8 /* ZipCodeEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 340ED4DA1379D36A0024B9C8 /* ZipCodeEditorViewController.m */; };
+		340ED4E21379D36A0024B9C8 /* ZipCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 340ED4DC1379D36A0024B9C8 /* ZipCode.m */; };
+		340ED4E31379D36A0024B9C8 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 340ED4DE1379D36A0024B9C8 /* LocationViewController.m */; };
+		340ED4E41379D36A0024B9C8 /* ZipCodeTableAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 340ED4E01379D36A0024B9C8 /* ZipCodeTableAppDelegate.m */; };
+		340ED5511379D7A20024B9C8 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 340ED5501379D7A20024B9C8 /* LocationViewController.xib */; };
 		34ACDAB713715C130003448F /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34ACDAB613715C130003448F /* MapView.xib */; };
 		34ACDB3B1371C7230003448F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34ACDB3A1371C7230003448F /* CoreLocation.framework */; };
 		34ACDB3D1371C7230003448F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34ACDB3C1371C7230003448F /* MapKit.framework */; };
@@ -34,6 +45,23 @@
 		28C286E00D94DF7D0034E888 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		340ED17C137335720024B9C8 /* ZipCodeEditorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZipCodeEditorViewController.xib; sourceTree = "<group>"; };
+		340ED18D137336BA0024B9C8 /* ZipCodeWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZipCodeWindow.xib; sourceTree = "<group>"; };
+		340ED3511379BC060024B9C8 /* ForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForecastViewController.h; path = ../../Downloads/Weather/Classes/ForecastViewController.h; sourceTree = SOURCE_ROOT; };
+		340ED3521379BC0E0024B9C8 /* ForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForecastViewController.m; path = ../../Downloads/Weather/Classes/ForecastViewController.m; sourceTree = SOURCE_ROOT; };
+		340ED3541379BC630024B9C8 /* WeatherAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherAppDelegate.h; path = ../../Downloads/Weather/Classes/WeatherAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		340ED3551379BC690024B9C8 /* WeatherAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherAppDelegate.m; path = ../../Downloads/Weather/Classes/WeatherAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		340ED3571379BC880024B9C8 /* ForecastViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ForecastViewController.xib; path = ../../Downloads/Weather/ForecastViewController.xib; sourceTree = SOURCE_ROOT; };
+		340ED35B1379BCC20024B9C8 /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLiOS.framework; path = ../../Downloads/Weather/YAJLiOS.framework; sourceTree = SOURCE_ROOT; };
+		340ED4D91379D36A0024B9C8 /* ZipCodeEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipCodeEditorViewController.h; path = ../ZipCodeEditorViewController.h; sourceTree = "<group>"; };
+		340ED4DA1379D36A0024B9C8 /* ZipCodeEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZipCodeEditorViewController.m; path = ../ZipCodeEditorViewController.m; sourceTree = "<group>"; };
+		340ED4DB1379D36A0024B9C8 /* ZipCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipCode.h; path = ../ZipCode.h; sourceTree = "<group>"; };
+		340ED4DC1379D36A0024B9C8 /* ZipCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZipCode.m; path = ../ZipCode.m; sourceTree = "<group>"; };
+		340ED4DD1379D36A0024B9C8 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationViewController.h; path = ../LocationViewController.h; sourceTree = "<group>"; };
+		340ED4DE1379D36A0024B9C8 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationViewController.m; path = ../LocationViewController.m; sourceTree = "<group>"; };
+		340ED4DF1379D36A0024B9C8 /* ZipCodeTableAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipCodeTableAppDelegate.h; path = ../ZipCodeTableAppDelegate.h; sourceTree = "<group>"; };
+		340ED4E01379D36A0024B9C8 /* ZipCodeTableAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZipCodeTableAppDelegate.m; path = ../ZipCodeTableAppDelegate.m; sourceTree = "<group>"; };
+		340ED5501379D7A20024B9C8 /* LocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
 		34ACDAB613715C130003448F /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		34ACDB3A1371C7230003448F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		34ACDB3C1371C7230003448F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -52,6 +80,7 @@
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				34ACDB3B1371C7230003448F /* CoreLocation.framework in Frameworks */,
 				34ACDB3D1371C7230003448F /* MapKit.framework in Frameworks */,
+				340ED35C1379BCC20024B9C8 /* YAJLiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +90,22 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				340ED4D91379D36A0024B9C8 /* ZipCodeEditorViewController.h */,
+				340ED4DA1379D36A0024B9C8 /* ZipCodeEditorViewController.m */,
+				340ED4DB1379D36A0024B9C8 /* ZipCode.h */,
+				340ED4DC1379D36A0024B9C8 /* ZipCode.m */,
+				340ED4DD1379D36A0024B9C8 /* LocationViewController.h */,
+				340ED4DE1379D36A0024B9C8 /* LocationViewController.m */,
+				340ED4DF1379D36A0024B9C8 /* ZipCodeTableAppDelegate.h */,
+				340ED4E01379D36A0024B9C8 /* ZipCodeTableAppDelegate.m */,
+				340ED3571379BC880024B9C8 /* ForecastViewController.xib */,
+				340ED18D137336BA0024B9C8 /* ZipCodeWindow.xib */,
+				340ED17C137335720024B9C8 /* ZipCodeEditorViewController.xib */,
+				340ED3511379BC060024B9C8 /* ForecastViewController.h */,
+				340ED3521379BC0E0024B9C8 /* ForecastViewController.m */,
+				340ED3541379BC630024B9C8 /* WeatherAppDelegate.h */,
+				340ED5501379D7A20024B9C8 /* LocationViewController.xib */,
+				340ED3551379BC690024B9C8 /* WeatherAppDelegate.m */,
 				28C286DF0D94DF7D0034E888 /* MapViewController.h */,
 				28C286E00D94DF7D0034E888 /* MapViewController.m */,
 				1D3623240D0F684500981E51 /* Weather_MapAppDelegate.h */,
@@ -114,6 +159,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				340ED35B1379BCC20024B9C8 /* YAJLiOS.framework */,
 				34ACDB3C1371C7230003448F /* MapKit.framework */,
 				34ACDB3A1371C7230003448F /* CoreLocation.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -176,6 +222,10 @@
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
 				34ACDAB713715C130003448F /* MapView.xib in Resources */,
+				340ED17E137335720024B9C8 /* ZipCodeEditorViewController.xib in Resources */,
+				340ED18E137336BA0024B9C8 /* ZipCodeWindow.xib in Resources */,
+				340ED3581379BC880024B9C8 /* ForecastViewController.xib in Resources */,
+				340ED5511379D7A20024B9C8 /* LocationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +240,12 @@
 				1D3623260D0F684500981E51 /* Weather_MapAppDelegate.m in Sources */,
 				28C286E10D94DF7D0034E888 /* MapViewController.m in Sources */,
 				34ACDD8B13731F910003448F /* DisplayMap.m in Sources */,
+				340ED3531379BC0E0024B9C8 /* ForecastViewController.m in Sources */,
+				340ED3561379BC690024B9C8 /* WeatherAppDelegate.m in Sources */,
+				340ED4E11379D36A0024B9C8 /* ZipCodeEditorViewController.m in Sources */,
+				340ED4E21379D36A0024B9C8 /* ZipCode.m in Sources */,
+				340ED4E31379D36A0024B9C8 /* LocationViewController.m in Sources */,
+				340ED4E41379D36A0024B9C8 /* ZipCodeTableAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +257,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads/Weather\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -215,6 +275,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads/Weather\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Weather_Map_Prefix.pch;
 				INFOPLIST_FILE = "Weather_Map-Info.plist";
@@ -231,6 +295,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};

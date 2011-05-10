@@ -1,93 +1,78 @@
 //
 //  RootViewController.m
-//  Weather_Map
+//  ZipCodeTable
 //
-//  Created by Nelson DaSilva on 4/28/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Tim Tran on 5/4/11.
+//  Copyright 2011 George Mason University. All rights reserved.
 //
 
-#import "MapViewController.h"
-#import "DisplayMap.h"
 #import "LocationViewController.h"
-#import "ForecastViewController.h"
+#import "ZipCodeEditorViewController.h"
 
-@implementation MapViewController
 
-@synthesize mapView;
-@synthesize locViewController;
-@synthesize forecViewController;
+@implementation LocationViewController
+
+@synthesize zipcodeArray;
+@synthesize ZipCodeEditor;
+@synthesize editingZipCode;
+
 
 #pragma mark -
 #pragma mark View lifecycle
 
--(IBAction) handleAddTapped {
-	[self.navigationController pushViewController: self.locViewController animated:YES] ;
-	
-	//NSLog(@"I'm here %@");
-}
-//-(IBAction) getWeather {
-//	[self.navigationController pushViewController: self.forecViewController animated:YES] ;
-//	}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+	zipcodeArray = [[NSMutableArray alloc] init];
+	ZipCode *aZipCode = [[ZipCode alloc] init];
+	aZipCode.name = @"Woodbridge";
+	aZipCode.zipcodenum = [NSNumber numberWithInt: 2342432432];
+	[zipcodeArray addObject: aZipCode];
+	[aZipCode release];
 	
-	[mapView setMapType:MKMapTypeStandard];
-	[mapView setZoomEnabled:YES];
-	[mapView setScrollEnabled:YES];
-	MKCoordinateRegion region = { {0.0, 0.0 }, { 0.0, 0.0 } };
-	region.center.latitude = 38.8322871 ;
-	region.center.longitude = -77.3080912;
-	region.span.longitudeDelta = 0.10f;
-	region.span.latitudeDelta = 0.10f;
-	[mapView setRegion:region animated:YES];
 	
-	[mapView setDelegate:self];
 	
-	DisplayMap *zip = [[DisplayMap alloc] init];
-	zip.title = @" 22030";
-	zip.subtitle = @"HOT AS HELL";
-	zip.coordinate = region.center;
-	[mapView addAnnotation:zip];
-	//self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+-(IBAction) handleAddTapped {
 	
-	//view.annotation.coordinate;
-	//self.forecViewController.
-	[self.navigationController pushViewController: self.forecViewController animated:YES] ;
+	ZipCode *newZipCode = [[ZipCode alloc] init];
+	editingZipCode = newZipCode;
+	ZipCodeEditor.zipcode = editingZipCode;
+	[self.navigationController pushViewController:ZipCodeEditor animated:YES];
+	
+	[zipcodeArray addObject: newZipCode];
+	NSIndexPath *newZipCodePath =
+	[NSIndexPath indexPathForRow: [zipcodeArray count]-1 inSection:0];
+	NSArray *newZipCodePaths = [NSArray arrayWithObject:newZipCodePath];
+	[self.tableView insertRowsAtIndexPaths:newZipCodePaths withRowAnimation:NO];
+	[newZipCode release];
 }
+	
 
--(MKAnnotationView *)mapView:(MKMapView *)mV viewForAnnotation:
-(id <MKAnnotation>)annotation {
-	MKPinAnnotationView *pinView = nil;
-	if(annotation != mapView.userLocation)
-	{
-		static NSString *defaultPinID = @"com.invasivecode.pin";
-		pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
-		if ( pinView == nil ) pinView = [[[MKPinAnnotationView alloc]
-										  initWithAnnotation:annotation reuseIdentifier:defaultPinID] autorelease];
+
+
 		
-		pinView.pinColor = MKPinAnnotationColorPurple;
-		pinView.canShowCallout = YES;
-		pinView.animatesDrop = YES;
-	}
-	else {
-		[mapView.userLocation setTitle:@"I am here"];
-	}
-	
-	UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-	pinView.rightCalloutAccessoryView = rightButton;
-	return pinView;
-}
 
-/*
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+
+
+
+
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+	if (editingZipCode) {
+		NSIndexPath *updatedPath = [NSIndexPath
+									indexPathForRow: [zipcodeArray indexOfObject:editingZipCode]
+									inSection: 0];
+		NSArray *updatedPaths = [NSArray arrayWithObject:updatedPath];
+		[self.tableView reloadRowsAtIndexPaths:updatedPaths
+							  withRowAnimation:NO];
+		editingZipCode = nil;
+	}
 }
-*/
+
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -104,18 +89,18 @@
 }
 */
 
-
+/*
  // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	// Return YES for supported orientations.
-	return YES;
+	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
+ */
 
 
 #pragma mark -
 #pragma mark Table view data source
-/*
+
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -124,48 +109,74 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+	
+    return [zipcodeArray count];
 }
 
 
 // Customize the appearance of table view cells.
+
+
+
+
+
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
 	// Configure the cell.
+	
+
+	
+	
+	
+	ZipCode *aZipCode = [zipcodeArray objectAtIndex:indexPath.row];
+	UILabel *nameLabel = cell.textLabel;
+	nameLabel.text = aZipCode.name;
+	cell.textLabel.text = aZipCode.name;
+	
+	
+	
+	UILabel *zipcodeLabel = cell.detailTextLabel;
+	zipcodeLabel.text = [NSString stringWithFormat:@"%@",
+						 aZipCode.zipcodenum];
+	
+
 
     return cell;
 }
 
-
-/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
 
-/*
+
+
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView 
+ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle 
+forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source.
+		
+		[zipcodeArray removeObjectAtIndex: indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+
     }   
-}
-*/
+
+
 
 
 /*
@@ -186,8 +197,14 @@
 
 #pragma mark -
 #pragma mark Table view delegate
-/*
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	
+	editingZipCode = [zipcodeArray objectAtIndex:indexPath.row];
+	ZipCodeEditor.zipcode = editingZipCode;
+	[self.navigationController pushViewController:ZipCodeEditor animated:YES];
+
     
 	/*
 	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -196,7 +213,7 @@
 	 [self.navigationController pushViewController:detailViewController animated:YES];
 	 [detailViewController release];
 	 */
-//}
+}
 
 
 #pragma mark -
